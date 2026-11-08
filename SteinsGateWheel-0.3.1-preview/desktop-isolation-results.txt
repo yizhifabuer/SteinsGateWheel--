@@ -1,0 +1,76 @@
+C:\Users\11408\Documents\ChatGPT\MOD\SteinsGateWheel\dist\SteinsGateWheelSetup.exe
+PASS Steam libraries: escaped paths, spaces, Unicode, deduplication
+PASS both game IDs discovered across different libraries
+PASS reject mismatched application ID
+PASS reject install-directory traversal
+PASS missing Steam library is harmless
+PASS installer embeds exact compiled agent
+PASS embedded executable has PE header
+PASS Win32 SendInput structure layout
+PASS quoted per-user startup command
+PASS repeat startup registration uses Run rather than RunOnce
+PASS rapid five-detent input gives five complete click pairs
+PASS upward wheel and non-game targets pass through
+PASS high-resolution wheel waits for a complete detent
+PASS high-resolution wheel accumulates exactly one click
+PASS cancellation clears all pending clicks
+PASS already-dequeued click invalidated by cancellation epoch
+PASS switching target discards previous target queue
+PASS stale queue expires rather than clicking much later
+PASS overflow clears queue and passes original input through
+PASS focus loss prevents injection
+PASS held physical left is never replaced
+PASS cancellation during down still releases owned button
+PASS send-down failure stops executor without endless retry
+PASS send-up failure stops further clicks
+PASS exception after down still attempts release
+PASS sender holds no queue lock while backend invokes hook-like callback
+PASS reentrant simulated backend completes without deadlock
+PASS contended hook-side enqueue returns immediately
+PASS isolated install copies files, registers startup, and launches fake host
+PASS install registers current preview version
+PASS uninstall removes only owned files and registration
+PASS uninstall preserves unrelated startup value
+PASS failed first launch rolls back fresh files and startup registration
+PASS failed upgrade restores previous binaries and registry data
+PASS startup-registration failure rolls back installation
+PASS failure to stop old agent aborts before installation changes
+PASS watchdog trips on stalled hook heartbeat after one second
+PASS watchdog independently detects stalled sender
+PASS heartbeat arithmetic handles TickCount wraparound
+PASS real test child terminated: stalled-hook (1158ms)
+PASS fatal-stop callback invoked exactly once: stalled-hook
+PASS real test child terminated: stalled-sender (1153ms)
+PASS fatal-stop callback invoked exactly once: stalled-sender
+PASS real test child terminated: stalled-with-down (1108ms)
+PASS watchdog invokes simulated owned-button recovery exactly once
+PASS fatal-stop callback invoked exactly once: stalled-with-down
+PASS real test child terminated: startup-stall (5065ms)
+PASS fatal-stop callback invoked exactly once: startup-stall
+PASS healthy test child exits within bounded supervisor shutdown
+PASS unresponsive supervisor UI also stops the input child
+PASS parent lease expiry, revoked permit, and stop request all fail closed
+PASS simulated worker self-terminates after loss of parent heartbeat
+PASS built runtime contains no cursor-hiding, moving, replacement, confinement, or desktop-switching native imports
+PASS generated input consists only of left-button down/up, never mouse movement or wheel synthesis
+PASS all synthetic button events carry the loop-prevention marker
+PASS access-denied termination is reported as unconfirmed, not closed
+PASS disposed process handle does not turn unknown shutdown into success
+PASS termination request without completion signal is not mistaken for exit
+PASS disposed process handle does not turn unknown shutdown into success
+PASS real-hook probe cannot inject input, switch desktops, or alter cursors
+PASS real mouse hook installed only after non-input desktop verification: healthy
+PASS user input desktop unchanged during isolated hook test: healthy
+PASS real-hook process shutdown confirmed by kernel wait on isolated desktop
+PASS original input desktop preserved after isolated probe teardown: healthy
+PASS real mouse hook installed only after non-input desktop verification: stalled-hook
+PASS user input desktop unchanged during isolated hook test: stalled-hook
+PASS real-hook probe stopped after stalled heartbeat: stalled-hook (1084ms)
+PASS original input desktop preserved after isolated probe teardown: stalled-hook
+PASS real mouse hook installed only after non-input desktop verification: stalled-sender
+PASS user input desktop unchanged during isolated hook test: stalled-sender
+PASS real-hook probe stopped after stalled heartbeat: stalled-sender (1085ms)
+PASS original input desktop preserved after isolated probe teardown: stalled-sender
+ISOLATION: fake input backend, in-memory registry, fake process host, and fixture files only.
+No product execution, physical input injection, cursor modification, game, startup registry writes, or computer-use invoked.
+Real hook lifecycle checks used an unshown, non-input Windows desktop; the input desktop was never switched.
